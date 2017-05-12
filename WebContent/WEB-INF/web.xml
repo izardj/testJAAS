@@ -17,7 +17,7 @@
 	<!-- mise en place de la protection -->
 	<security-constraint>
 		<display-name>authentification administrateur</display-name>
-		<!-- liste des pages protegees -->
+		<!--  liste des pages protegees -->
 		<web-resource-collection>
 			<web-resource-name>les pages admins</web-resource-name>
 			<url-pattern>/admin/*</url-pattern>
@@ -27,10 +27,22 @@
 			<role-name>admin</role-name>
 		</auth-constraint>
 	</security-constraint>
-	<!-- type d'authentification -->
+	
+<!-- type d'authentification -->
+	<!--  MODE BASIC -->
+<!-- 	<login-config> -->
+<!-- 		<auth-method>BASIC</auth-method> -->
+<!-- 		<realm-name>Espace sécurisé</realm-name> -->
+<!-- 	</login-config> -->
+	<!-- MODE FORM -->
 	<login-config>
-		<auth-method>BASIC</auth-method>
-		<realm-name>Espace sécurisé</realm-name>
+		<auth-method>FORM</auth-method>
+		<realm-name>espace sécurisé</realm-name>
+		<!--  declarartion des formulaires de connexion -->
+		<form-login-config>
+			<form-login-page>/login.jsp</form-login-page>
+			<form-error-page>/error.jsp</form-error-page>
+		</form-login-config>
 	</login-config>
 	<!--  rôles utilisés dans l'application -->
 	<security-role>
